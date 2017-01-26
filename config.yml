@@ -1,0 +1,10 @@
+---
+neo4j:
+  user:      "gopher"
+  password:  "gopher321"
+  baseURL:   "localhost"
+  port:      "7687"
+
+dataset:
+  file1: "data/character-deaths.csv"
+...
