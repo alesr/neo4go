@@ -95,12 +95,12 @@ func assembly() ([]string, error) {
 
 // Assembly a query to create a new character
 func addCharQuery(name string) string {
-	return fmt.Sprintf("MERGE (c:Character{name: \"%s\"})", name)
+	return fmt.Sprintf("MERGE (c:Character{name: '%s'})", name)
 }
 
 // Assembly a query to create a new house
 func addHouseQuery(house string) string {
-	return fmt.Sprintf("MERGE (h:House{name: \"%s\"})", house)
+	return fmt.Sprintf("MERGE (h:House{name: '%s'})", house)
 }
 
 // Assembly a query to create a new allegiance
