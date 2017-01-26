@@ -1,0 +1,7 @@
+---
+- hosts: controller
+  become: yes
+
+  roles:
+    - ansible
+...

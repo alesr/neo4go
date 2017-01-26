@@ -1,0 +1,8 @@
+[control]
+controller ansible_host=192.168.11.2 ansible_user=vagrant
+
+[DB]
+neo4j ansible_host=192.168.11.3 ansible_user=vagrant
+
+[services:children]
+DB
