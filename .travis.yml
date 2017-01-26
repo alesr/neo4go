@@ -1,0 +1,17 @@
+---
+sudo: false
+
+services:
+  - docker
+
+language: go
+
+go:
+  - 1.7.4
+
+before_install:
+  - docker build -t neo4go .
+
+script:
+  - docker run neo4go
+...
