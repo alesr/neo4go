@@ -22,18 +22,4 @@
     group: "{{ group }}"
     mode: 0644
   when: stat_ansible_config.stat.exists
-
-- name: stat ansible inventory file
-  stat:
-    path: "{{ inventory_file }}"
-  register: stat_inventory
-
-- name: copy .inventory to home directory
-  copy:
-    src: .inventory
-    dest: /home/{{ user }}/.inventory
-    owner: "{{ user }}"
-    group: "{{ group }}"
-    mode: 0644
-  when: stat_inventory.stat.exists
 ...

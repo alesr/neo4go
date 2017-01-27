@@ -1,8 +1,10 @@
 [control]
 controller ansible_host=192.168.11.2 ansible_user=vagrant
 
-[DB]
-neo4j ansible_host=192.168.11.3 ansible_user=vagrant
+[neo4j_instances]
+neo4j1 ansible_host=192.168.11.3 ansible_user=vagrant
+neo4j2 ansible_host=192.168.11.4 ansible_user=vagrant
+neo4j3 ansible_host=192.168.11.5 ansible_user=vagrant
 
 [services:children]
-DB
+neo4j_instances
