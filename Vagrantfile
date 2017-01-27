@@ -24,9 +24,19 @@ Vagrant.configure("2") do |config|
 
   # Morpheus yells: MACHINES!
   $nodes = {
-    "restapi" => {
-      "tag" => "neo4j",
+    "neo4j1" => {
+      "tag" => "neo4j1",
       "IP" => "192.168.11.3",
+      "synced_folder_disabled" => true
+    },
+    "neo4j2" => {
+      "tag" => "neo4j2",
+      "IP" => "192.168.11.4",
+      "synced_folder_disabled" => true
+    },
+    "neo4j3" => {
+      "tag" => "neo4j3",
+      "IP" => "192.168.11.5",
       "synced_folder_disabled" => true
     }
   }
