@@ -1,0 +1,32 @@
+---
+- hosts: neo4j_instances
+  become: yes
+
+  tasks:
+
+    - name: install unzip
+      yum:
+        name: unzip
+        state: present
+
+    - name: check if install file exist
+      stat:
+        path: /home/vagrant/neo4j-enterprise-3.1.1
+      register: setup
+
+    - name: download neo4j
+      get_url:
+        url: https://neo4j.com/artifact.php?name=neo4j-enterprise-3.1.1-unix.tar.gz
+        dest: /home/vagrant/
+        mode: 0644
+        owner: vagrant
+      when: setup.stat.isdir is not defined
+      register: download
+
+    - name: unzip neo4j
+      unarchive:
+        src: /home/vagrant/neo4j-enterprise-3.1.1-unix.tar.gz
+        dest: /home/vagrant/
+        remote_src: True
+      when: download|changed
+...
